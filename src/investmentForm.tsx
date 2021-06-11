@@ -10,7 +10,9 @@ interface InvestmentProps {
         super(props);
         this.state = {
 Username: '',
-Amount : 0
+Amount : 0,
+Duration: 0,
+            returns:0
         }
     }
 changeHandler= (e:any)=>{
@@ -18,20 +20,25 @@ changeHandler= (e:any)=>{
 }
 submitHandler = (e:any)=>{
    e.preventDefault();
-   console.log(this.state);
-   let postdata = {
+
+   let postdata:object = {
        Username:this.state.Username[0],
-       Amount:this.state.Amount[0]
+       Amount:this.state.Amount[0],
+       Duration:this.state.Duration[0]
    }
+   console.log(postdata)
    axios.post('https://127.0.0.1:5001/api/Investment',postdata).then((response) => {
        console.log(response);
+       this.setState((returns:number)=>({
+           returns:response.data
+       }))
    }, (error) => {
        console.log(error);
    });
 }
 render(){
 
-    const { Username, Amount } = this.state
+    const { Username, Amount,Duration } = this.state
         return(
             <div className='container' >
                 <div className='row'>
@@ -52,13 +59,20 @@ render(){
                                        onChange={this.changeHandler}
                                 value={Amount}/>
                             </div>
+                            <div className="form-group">
+                                <label htmlFor="amount">Duration</label>
+                                <input type="number" className="form-control" name='Duration'
+                                       id='duration'  placeholder="Please Enter the duration of your investment in years."
+                                       onChange={this.changeHandler}
+                                value={Duration}/>
+                            </div>
 
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
 
                 </div>
-
+<p> Interest : {this.state.returns}</p>
             </div>
         )
 }
