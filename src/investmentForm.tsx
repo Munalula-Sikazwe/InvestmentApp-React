@@ -2,12 +2,12 @@ import React,{ Component } from "react";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 interface InvestmentState {
-    Name: string;
+    Username: string;
     Amount: number;
     Duration:number;
     returns:number;
 }
- export class InvestmentForm extends React.Component<any,any>{
+ export class InvestmentForm extends Component<any,any>{
     constructor(props:any) {
         super(props);
         this.state = {
