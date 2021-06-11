@@ -30,7 +30,7 @@ submitHandler = (e:any)=>{
    }
    console.log(postdata)
    axios.post('https://127.0.0.1:5001/api/Investment',postdata).then((response) => {
-       console.log(response);
+       console.log(response.data);
        this.setState((returns:number)=>({
            returns:response.data
        }))
