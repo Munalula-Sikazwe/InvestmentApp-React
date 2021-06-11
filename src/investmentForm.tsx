@@ -74,6 +74,7 @@ render(){
                     </div>
 
                 </div>
+                <hr/>
 <p> Interest : {this.state.returns}</p>
             </div>
         )
