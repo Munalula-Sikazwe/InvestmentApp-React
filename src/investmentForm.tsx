@@ -19,7 +19,11 @@ changeHandler= (e:any)=>{
 submitHandler = (e:any)=>{
    e.preventDefault();
    console.log(this.state);
-   axios.post('https://127.0.0.1:5001/api/Investment').then((response) => {
+   let postdata = {
+       Username:this.state.Username[0],
+       Amount:this.state.Amount[0]
+   }
+   axios.post('https://127.0.0.1:5001/api/Investment',postdata).then((response) => {
        console.log(response);
    }, (error) => {
        console.log(error);
