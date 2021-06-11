@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
-import axios from 'axios'
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 interface InvestmentProps {
     name: string;
     amount: number;
@@ -18,18 +19,23 @@ changeHandler= (e:any)=>{
 submitHandler = (e:any)=>{
    e.preventDefault();
    console.log(this.state);
+   axios.post('https://127.0.0.1:5001/api/Investment').then((response) => {
+       console.log(response);
+   }, (error) => {
+       console.log(error);
+   });
 }
 render(){
         // @ts-ignore
     const { username, amount } = this.state
         return(
             <div>
-                <form onSubmit={this.submitHandler}>
+                <form onSubmit={this.submitHandler} >
                     <div>
-                        <input type='text' name='username' value={username} onChange={this.changeHandler}/>
+                        <input className='form-control' type='text' name='username' value={username} onChange={this.changeHandler}/>
                     </div>
                     <div>
-                        <input type='number' name='amount' value={amount} onChange={this.changeHandler}/>
+                        <input className='form-control' type='number' name='amount' value={amount} onChange={this.changeHandler}/>
                     </div>
 <button type='submit' > Submit </button>
                 </form>
