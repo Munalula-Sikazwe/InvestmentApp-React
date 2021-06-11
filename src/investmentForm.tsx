@@ -69,7 +69,7 @@ render(){
                                 value={Duration}/>
                             </div>
 
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Invest</button>
                         </form>
                     </div>
 
