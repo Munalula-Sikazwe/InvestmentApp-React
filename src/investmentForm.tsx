@@ -26,19 +26,32 @@ submitHandler = (e:any)=>{
    });
 }
 render(){
-        // @ts-ignore
+
     const { username, amount } = this.state
         return(
-            <div>
-                <form onSubmit={this.submitHandler} >
-                    <div>
-                        <input className='form-control' type='text' name='username' value={username} onChange={this.changeHandler}/>
+            <div className='container' >
+                <div className='row'>
+                    <div className='offset-4 col-md-4'>
+                        <form onSubmit={this.submitHandler}>
+
+                            <div className="form-group">
+                                <label htmlFor='username'>Username</label>
+                                <input type="text" className="form-control"  name={username}
+                                       id='username' placeholder="Enter your username"/>
+
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="amount">Amount</label>
+                                <input type="number" className="form-control" name={amount}
+                                       id='amount'  placeholder="Enter amount you want to invest"/>
+                            </div>
+
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
                     </div>
-                    <div>
-                        <input className='form-control' type='number' name='amount' value={amount} onChange={this.changeHandler}/>
-                    </div>
-<button type='submit' > Submit </button>
-                </form>
+
+                </div>
+
             </div>
         )
 }
