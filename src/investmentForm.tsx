@@ -9,8 +9,8 @@ interface InvestmentProps {
     constructor(props:InvestmentProps) {
         super(props);
         this.state = {
-username: '',
-amount : 0
+Username: '',
+Amount : 0
         }
     }
 changeHandler= (e:any)=>{
@@ -27,7 +27,7 @@ submitHandler = (e:any)=>{
 }
 render(){
 
-    const { username, amount } = this.state
+    const { Username, Amount } = this.state
         return(
             <div className='container' >
                 <div className='row'>
@@ -36,14 +36,17 @@ render(){
 
                             <div className="form-group">
                                 <label htmlFor='username'>Username</label>
-                                <input type="text" className="form-control"  name={username}
-                                       id='username' placeholder="Enter your username"/>
+                                <input type="text" className="form-control"  name='Username'
+                                       id='username' placeholder="Enter your username" onChange={this.changeHandler}
+                                value={Username}/>
 
                             </div>
                             <div className="form-group">
                                 <label htmlFor="amount">Amount</label>
-                                <input type="number" className="form-control" name={amount}
-                                       id='amount'  placeholder="Enter amount you want to invest"/>
+                                <input type="number" className="form-control" name='Amount'
+                                       id='amount'  placeholder="Enter amount you want to invest"
+                                       onChange={this.changeHandler}
+                                value={Amount}/>
                             </div>
 
                             <button type="submit" className="btn btn-primary">Submit</button>
