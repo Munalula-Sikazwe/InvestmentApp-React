@@ -62,7 +62,7 @@ render(){
                             <div className="form-group">
                                 <label htmlFor="amount">Duration</label>
                                 <input type="number" className="form-control" name='Duration'
-                                       id='duration'  placeholder="Please Enter the duration of your investment in years."
+                                       id='duration'  placeholder="Duration in years."
                                        onChange={this.changeHandler}
                                 value={Duration}/>
                             </div>
