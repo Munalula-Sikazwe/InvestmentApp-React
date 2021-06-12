@@ -1,10 +1,23 @@
 import React, {Component} from "react";
 import axios from "axios";
-export class ViewInvestments extends Component<any, any>{
+interface Istate{
+    investment: {
+        username:string,
+        amount:number,
+        investmentReturns:number,
+        investmentId:number
+    }
+}
+export class ViewInvestments extends Component<any, Istate>{
     constructor(props:any) {
         super(props);
         this.state = {
-            investment: {}
+            investment: {
+                username:'',
+                amount:0,
+                investmentReturns:0,
+                investmentId:0
+            }
         }
     }
    async componentDidMount() {
