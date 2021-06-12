@@ -1,15 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {InvestmentForm} from "./investmentForm";
-import {ViewInvestments} from "./ViewInvestments";
+import {MakeInvestmentComponent} from "./Components/MakeInvestmentComponent";
+import {ViewInvestmentsComponent} from "./Components/ViewInvestmentsComponent";
 
 function App() {
   return (
     <div className="App">
-     <InvestmentForm name={'John'} amount={10}/>
+     <MakeInvestmentComponent name={'John'} amount={10}/>
         <hr/>
-        <ViewInvestments/>
+        <ViewInvestmentsComponent/>
     </div>
   );
 }

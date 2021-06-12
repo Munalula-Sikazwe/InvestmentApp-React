@@ -8,7 +8,7 @@ interface Istate{
         investmentId:number
     }
 }
-export class ViewInvestments extends Component<any, Istate>{
+export class ViewInvestmentsComponent extends Component<any, Istate>{
     constructor(props:any) {
         super(props);
         this.state = {
