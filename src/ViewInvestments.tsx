@@ -20,8 +20,8 @@ export class ViewInvestments extends Component<any, Istate>{
             }
         }
     }
-   async componentDidMount() {
-        axios.get('https://localhost:5001/api/Investment/7').then(response=>{
+    componentDidMount() {
+        axios.get('https://localhost:5001/api/Investment/1').then(response=>{
             console.log(response.data);
             this.setState((investment:object)=>({
                 investment:response.data
