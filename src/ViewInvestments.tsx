@@ -4,5 +4,13 @@ export class ViewInvestments extends Component<any, any>{
     constructor(props:any) {
         super(props);
     }
-
+render() {
+    return (
+        <div>
+            <p>Username:</p>
+            <p>Amount:</p>
+            <p>Returns:</p>
+        </div>
+    );
+}
 }
