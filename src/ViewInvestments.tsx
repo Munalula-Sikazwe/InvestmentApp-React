@@ -9,7 +9,7 @@ render() {
         <div>
             <p>Username:</p>
             <p>Amount:</p>
-            <p>Returns:</p>
+            <p>Interest:</p>
         </div>
     );
 }
