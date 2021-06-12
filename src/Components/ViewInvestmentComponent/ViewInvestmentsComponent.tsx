@@ -8,7 +8,8 @@ interface Istate{
         username:string,
         amount:number,
         investmentReturns:number,
-        investmentId:number
+        investmentId:number,
+        duration:number
     }>
 }
 export class ViewInvestmentsComponent extends Component<any, Istate>{
@@ -44,6 +45,7 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
                                 <th scope="col">InvestmentId</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Amount</th>
+                                <th scope='col'>Duration</th>
                                 <th scope="col">Returns</th>
                             </tr>
                             </thead>
@@ -57,6 +59,7 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
                                         <th scope="row">{investment.investmentId}</th>
                                       <td><Link>{investment.username}</Link></td>
                                         <td>{investment.amount}</td>
+                                    <td>{investment.duration}</td>
                                         <td>{investment.investmentReturns}</td>
                                 </tr>
                                 ))}
