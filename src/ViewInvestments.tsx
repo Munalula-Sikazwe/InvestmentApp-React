@@ -8,7 +8,7 @@ export class ViewInvestments extends Component<any, any>{
         }
     }
    async componentDidMount() {
-        axios.get('https://localhost:5001/api/Investment/1').then(response=>{
+        axios.get('https://localhost:5001/api/Investment/7').then(response=>{
             console.log(response.data);
             this.setState((investment:object)=>({
                 investment:response.data
@@ -21,8 +21,9 @@ export class ViewInvestments extends Component<any, any>{
     return (
         <div>
             <p>Username:  {this.state.investment.username}</p>
-            <p>Amount:  {this.state.investment.amount}</p>
-            <p>Interest:</p>
+            <p>Amount Invested:  {this.state.investment.amount}</p>
+            <p>Investment Returns: {this.state.investment.investmentReturns}</p>
+            <p>Investment Id: {this.state.investment.investmentId}</p>
         </div>
     );
 }
