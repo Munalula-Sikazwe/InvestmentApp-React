@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
+// @ts-ignore
 import {Link} from "react-router-dom";
 
 interface Istate{
@@ -31,31 +32,42 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
     render() {
     return (
         <div>
-            {this.state.investment.map(investment=>(
-                <div className='row' key={investment.investmentId}>
+
+                <div className='row'>
                     <div className="col-md-6 offset-3">
-                        <table className="table thead-dark table-responsive  ">
+
+                        <table className="table thead-dark table-responsive table-striped  ">
+
                             <thead>
                             <tr>
+
                                 <th scope="col">InvestmentId</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Returns</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">{investment.investmentId}</th>
-                                <td>{investment.username}</td>
-                                <td>{investment.amount}</td>
-                                <td>{investment.investmentReturns}</td>
-                            </tr>
 
+                            <tbody >
+
+
+                                {this.state.investment.map(investment=>(
+                                <tr key={investment.investmentId}>
+
+                                        <th scope="row">{investment.investmentId}</th>
+                                      <td><Link>{investment.username}</Link></td>
+                                        <td>{investment.amount}</td>
+                                        <td>{investment.investmentReturns}</td>
+                                </tr>
+                                ))}
                             </tbody>
-                        </table></div>
+
+                        </table>
+
+                        </div>
                     <div className="col-md-6"></div>
                 </div>
-            ))}
+
         </div>
     );
 }
