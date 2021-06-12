@@ -3,14 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 import {MakeInvestmentComponent} from "./Components/MakeInvestmentComponent";
 import {ViewInvestmentsComponent} from "./Components/ViewInvestmentsComponent";
+// @ts-ignore
+import {BrowserRouter as Router,Route  } from "react-router-dom";
+import {NavbarComponent} from "./Components/NavbarComponent";
 
 function App() {
   return (
-    <div className="App">
-     <MakeInvestmentComponent name={'John'} amount={10}/>
-        <hr/>
-        <ViewInvestmentsComponent/>
-    </div>
+      <Router>
+          <div className="App">
+<NavbarComponent/>
+             <Route path="/make-investment" component={MakeInvestmentComponent}/>
+              <hr/>
+             <Route path="/view-investments" component={ViewInvestmentsComponent}/>
+          </div>
+      </Router>
+
   );
 }
 
