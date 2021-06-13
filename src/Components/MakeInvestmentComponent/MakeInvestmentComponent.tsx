@@ -38,7 +38,7 @@ render(){
 
     const { Username, Amount,Duration } = this.state
         return(
-            <div className='container' >
+            <div className={'container'} >
                 <div className='row'>
                     <div className='offset-4 col-md-4'>
                         <form onSubmit={this.submitHandler}>
