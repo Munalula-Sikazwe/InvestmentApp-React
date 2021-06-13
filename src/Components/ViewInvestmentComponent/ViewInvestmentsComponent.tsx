@@ -29,9 +29,13 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
                 investment:response.data
             })
         })
+    }
+    clickHandler = (investmentId:number)=> {
+        axios.delete(`https://localhost:5001/api/Investment/${investmentId}`).then((response)=>{
+            this.setState({investment:response.data})
+        })
 
     }
-
     render() {
     return (
         <div className={"container"}>
@@ -63,6 +67,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
                                         <td>{investment.amount}</td>
                                     <td>{investment.duration}</td>
                                         <td>{investment.investmentReturns}</td>
+                                    <td><button onClick={()=> this.clickHandler(investment.investmentId)} className="btn btn-danger">Delete </button></td>
                                 </tr>
                                 ))}
                             </tbody>
