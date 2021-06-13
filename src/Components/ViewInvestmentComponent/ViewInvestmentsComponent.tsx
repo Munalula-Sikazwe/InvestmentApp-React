@@ -57,7 +57,7 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
                                 <tr key={investment.investmentId}>
 
                                         <th scope="row">{investment.investmentId}</th>
-                                      <td><Link>{investment.username}</Link></td>
+                                      <td>{investment.username}</td>
                                         <td>{investment.amount}</td>
                                     <td>{investment.duration}</td>
                                         <td>{investment.investmentReturns}</td>
