@@ -37,7 +37,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         <div className={"container"}>
 
                 <div className='row'>
-                    <div className="col-md-6 offset-1">
+                    <div className="col-md-6 offset-3">
 
                         <table className="table thead-dark table-responsive table-striped  ">
 
