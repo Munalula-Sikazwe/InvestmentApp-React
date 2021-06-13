@@ -27,9 +27,9 @@ submitHandler = (e:any)=>{
    console.log(this.state)
    axios.post('https://127.0.0.1:5001/api/Investment',this.state).then((response:any) => {
        console.log(response.data);
-       this.setState((returns:any)=>({
+       this.setState({
            returns:response.data
-       }))
+       })
    }, (error) => {
        console.log(error);
    });
