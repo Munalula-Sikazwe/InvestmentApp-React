@@ -43,7 +43,7 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
                             <tr>
 
                                 <th scope="col">InvestmentId</th>
-                                <th scope="col">Username</th>
+                                <th scope="col">Investor</th>
                                 <th scope="col">Amount</th>
                                 <th scope='col'>Duration</th>
                                 <th scope="col">Returns</th>
