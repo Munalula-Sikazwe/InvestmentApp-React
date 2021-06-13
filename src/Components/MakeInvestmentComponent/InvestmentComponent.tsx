@@ -7,10 +7,10 @@ interface InvestmentState {
     Duration:number;
     returns:number;
 }
-interface InvestmentComponent{}
- export class MakeInvestmentComponent extends Component<InvestmentComponent,InvestmentState>{
+interface InvestmentProps{}
+ export class MakeInvestmentComponent extends Component<InvestmentProps,InvestmentState>{
     state:InvestmentState;
-    constructor(props:any) {
+    constructor(props:InvestmentProps) {
         super(props);
         this.state = {
 Username: '',

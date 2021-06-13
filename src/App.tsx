@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {MakeInvestmentComponent} from "./Components/MakeInvestmentComponent/MakeInvestmentComponent";
+import {MakeInvestmentComponent} from "./Components/MakeInvestmentComponent/InvestmentComponent";
 import {ViewInvestmentsComponent} from "./Components/ViewInvestmentComponent/ViewInvestmentsComponent";
 // @ts-ignore
 import {BrowserRouter as Router,Route,Switch } from "react-router-dom";
