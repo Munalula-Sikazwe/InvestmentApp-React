@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 // @ts-ignore
-import {Link} from "react-router-dom";
+
 
 interface Investmentstate{
     investment: Array<{

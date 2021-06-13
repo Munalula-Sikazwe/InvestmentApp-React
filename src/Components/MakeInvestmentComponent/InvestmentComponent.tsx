@@ -1,6 +1,7 @@
 import React,{ Component } from "react";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 interface InvestmentState {
     Username: string;
     Amount: number;
@@ -19,11 +20,11 @@ Duration: 0,
             returns:0
         }
     }
-changeHandler= (e:any)=>{
-        this.setState({[e.target.name]: e.target.value} as unknown as InvestmentState )
+changeHandler= (event:any)=>{
+        this.setState({[event.target.name]: event.target.value} as unknown as InvestmentState )
 }
-submitHandler = (e:any)=>{
-   e.preventDefault();
+submitHandler = (event:any)=>{
+   event.preventDefault();
 
 
    console.log(this.state)
