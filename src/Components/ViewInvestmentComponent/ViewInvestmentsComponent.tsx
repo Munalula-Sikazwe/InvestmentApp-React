@@ -32,7 +32,7 @@ export class ViewInvestmentsComponent extends Component<any, Istate>{
 
     render() {
     return (
-        <div>
+        <div className={"container"}>
 
                 <div className='row'>
                     <div className="col-md-6 offset-3">
