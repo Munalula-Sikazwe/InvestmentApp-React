@@ -7,7 +7,7 @@ interface InvestmentState {
     Duration:number;
     returns:number;
 }
- export class MakeInvestmentComponent extends Component<any,any>{
+ export class MakeInvestmentComponent extends Component<any,InvestmentState>{
     constructor(props:any) {
         super(props);
         this.state = {
@@ -18,16 +18,16 @@ Duration: 0,
         }
     }
 changeHandler= (e:any)=>{
-        this.setState({[e.target.name]:e.target.value})
+        this.setState({Amount: e.target.value, Duration:  e.target.value, Username: e.target.value, returns: e.target.value})
 }
 submitHandler = (e:any)=>{
    e.preventDefault();
 
 
    console.log(this.state)
-   axios.post('https://127.0.0.1:5001/api/Investment',this.state).then((response) => {
+   axios.post('https://127.0.0.1:5001/api/Investment',this.state).then((response:any) => {
        console.log(response.data);
-       this.setState((returns:number)=>({
+       this.setState((returns:any)=>({
            returns:response.data
        }))
    }, (error) => {
