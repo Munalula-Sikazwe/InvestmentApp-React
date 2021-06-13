@@ -3,7 +3,7 @@ import axios from "axios";
 // @ts-ignore
 import {Link} from "react-router-dom";
 
-interface Istate{
+interface Investmentstate{
     investment: Array<{
         username:string,
         amount:number,
@@ -11,9 +11,11 @@ interface Istate{
         investmentId:number,
         duration:number
     }>
+
 }
-export class ViewInvestmentsComponent extends Component<any, Istate>{
-    state:Istate;
+interface Investmentprops{}
+export class ViewInvestmentsComponent extends Component<Investmentprops, Investmentstate>{
+    state:Investmentstate;
     constructor(props:any) {
         super(props);
         this.state = {
