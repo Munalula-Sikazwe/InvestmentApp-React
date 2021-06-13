@@ -18,7 +18,7 @@ Duration: 0,
         }
     }
 changeHandler= (e:any)=>{
-        this.setState({Amount: e.target.value, Duration:  e.target.value, Username: e.target.value, returns: e.target.value})
+        this.setState({[e.target.name]: e.target.value} as unknown as InvestmentState )
 }
 submitHandler = (e:any)=>{
    e.preventDefault();
