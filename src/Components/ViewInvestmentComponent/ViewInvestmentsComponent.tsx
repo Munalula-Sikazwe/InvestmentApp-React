@@ -16,7 +16,7 @@ interface Investmentstate{
 interface Investmentprops{}
 export class ViewInvestmentsComponent extends Component<Investmentprops, Investmentstate>{
     state:Investmentstate;
-    constructor(props:any) {
+    constructor(props:Investmentprops) {
         super(props);
         this.state = {
             investment: []
