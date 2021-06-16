@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 
 
 
@@ -23,7 +23,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         }
     }
     componentDidMount() {
-        axios.get<Investmentstate["investment"]>('https://localhost:5001/api/Investment/').then(response=>{
+        axios.get<Investmentstate["investment"]>('https://localhost:5001/api/Investment/').then((response:AxiosResponse)=>{
             console.log(response.data);
             this.setState({
                 investment:response.data
@@ -31,7 +31,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         })
     }
     clickHandler = (investmentId:number)=> {
-        axios.delete<Investmentstate['investment']>(`https://localhost:5001/api/Investment/${investmentId}`).then((response)=>{
+        axios.delete<Investmentstate['investment']>(`https://localhost:5001/api/Investment/${investmentId}`).then((response:AxiosResponse)=>{
             this.setState({investment:response.data})
         })
 
