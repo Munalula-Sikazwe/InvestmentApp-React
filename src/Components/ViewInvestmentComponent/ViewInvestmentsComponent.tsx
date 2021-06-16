@@ -44,7 +44,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         <div className={"container"}>
 <div className={"row"}>
     <div className="col-md-12">
-        <InvestmentListComponent investment={this.state.investment}/>
+        <InvestmentListComponent delete={this.clickHandler} investment={this.state.investment}/>
     </div>
 
 </div>

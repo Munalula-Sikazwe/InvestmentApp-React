@@ -1,6 +1,8 @@
 import React,{FC} from "react";
 import {Investmentstate} from "../../ViewInvestmentsComponent";
-interface InvestmentListProps extends Investmentstate{}
+interface InvestmentListProps extends Investmentstate{
+    delete:(id:number)=>void
+}
  export const InvestmentListComponent:FC<InvestmentListProps> = (investments:InvestmentListProps)=>{
     return(
         <div>
