@@ -1,6 +1,7 @@
 import React,{FC}from 'react';
-
-export const ViewInvestmentsListComponent:FC=()=> {
+import {Investmentstate} from "../ViewInvestmentsComponent";
+interface InvestmentListProps extends Investmentstate {}
+export const ViewInvestmentsListComponent:FC<InvestmentListProps>=()=> {
     return (
         <div>
 
