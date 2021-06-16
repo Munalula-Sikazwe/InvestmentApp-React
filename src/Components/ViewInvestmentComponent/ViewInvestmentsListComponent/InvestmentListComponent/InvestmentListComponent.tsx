@@ -33,7 +33,7 @@ interface InvestmentListProps extends Investmentstate{
                                 <td>{investment.amount}</td>
                                 <td>{investment.duration}</td>
                                 <td>{investment.investmentReturns}</td>
-                                {/*<td><button onClick={()=> this.clickHandler(investment.investmentId)} className="btn btn-danger">Delete </button></td>*/}
+                                <td><button onClick={()=> investments.delete(investment.investmentId)} className="btn btn-danger">Delete </button></td>
                             </tr>
                         ))}
                         </tbody>
