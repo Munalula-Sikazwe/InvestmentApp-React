@@ -25,14 +25,14 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
     componentDidMount() {
         axios.get<Investmentstate["investment"]>('https://localhost:5001/api/Investment/').then((response:AxiosResponse<Investmentstate["investment"]>)=>{
             console.log(response.data);
-            this.setState((investment:Investmentstate["investment"])=>({
+            this.setState({
                 investment:response.data
-            }))
+            })
         })
     }
     clickHandler = (investmentId:number)=> {
         axios.delete<Investmentstate['investment']>(`https://localhost:5001/api/Investment/${investmentId}`).then((response:AxiosResponse<Investmentstate["investment"]>)=>{
-            this.setState((investment:Investmentstate['investment'])=>({investment:response.data}))
+            this.setState({investment:response.data})
         })
 
     }
