@@ -36,7 +36,7 @@ submitHandler = (event:any)=>{
        console.log(error);
    });
 }
-render(){
+render():JSX.Element{
 
     const { Username, Amount,Duration } = this.state
         return(

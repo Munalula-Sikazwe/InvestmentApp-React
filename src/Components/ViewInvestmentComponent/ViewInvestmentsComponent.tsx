@@ -36,7 +36,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         })
 
     }
-    render() {
+    render():JSX.Element {
     return (
         <div className={"container"}>
 
