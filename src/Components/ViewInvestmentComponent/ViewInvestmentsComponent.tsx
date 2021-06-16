@@ -3,7 +3,7 @@ import axios, {AxiosResponse} from "axios";
 
 
 
-interface Investmentstate{
+ export interface Investmentstate{
     investment: Array<{
         username:string,
         amount:number,
