@@ -1,5 +1,5 @@
 import React,{ Component } from "react";
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 interface InvestmentState {
     Username: string;
@@ -27,7 +27,7 @@ submitHandler = (event:any)=>{
 
 
    console.log(this.state)
-   axios.post<InvestmentState['returns']>('https://127.0.0.1:5001/api/Investment',this.state).then((response) => {
+   axios.post<InvestmentState['returns']>('https://127.0.0.1:5001/api/Investment',this.state).then((response:AxiosResponse<InvestmentState["returns"]>) => {
 
        this.setState({
            returns:response.data
