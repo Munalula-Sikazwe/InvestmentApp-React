@@ -1,7 +1,7 @@
 import React , {FC} from "react";
 
 
-const SingleInvestmentComponent:FC = props =>{
+ export const SingleInvestmentComponent:FC = props =>{
     return(
         <div>
 
