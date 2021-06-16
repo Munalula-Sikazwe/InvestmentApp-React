@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import axios, {AxiosResponse} from "axios";
 import {InvestmentListComponent} from "./ViewInvestmentsListComponent/InvestmentListComponent/InvestmentListComponent";
-import {SingleInvestmentComponent} from "./ViewInvestmentsListComponent/InvestmentListComponent/SingleInvestmentComponent/SingleInvestmentComponent";
-import {doesNotThrow} from "assert";
+
+
 
 
 
@@ -43,12 +43,10 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
     return (
         <div className={"container"}>
 <div className={"row"}>
-    <div className="col-md-6">
+    <div className="col-md-12">
         <InvestmentListComponent investment={this.state.investment}/>
     </div>
-    <div className="col-md-6">
-        <SingleInvestmentComponent/>
-    </div>
+
 </div>
 
 
