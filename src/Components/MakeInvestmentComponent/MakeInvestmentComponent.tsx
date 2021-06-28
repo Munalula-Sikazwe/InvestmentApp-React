@@ -2,9 +2,9 @@ import React,{ Component } from "react";
 import axios, {AxiosResponse} from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 interface InvestmentState {
-    Username: string;
-    Amount: number;
-    Duration:number;
+    username: string;
+    amount: number;
+    duration:number;
     returns:number;
 }
 interface InvestmentProps{}
@@ -13,9 +13,9 @@ interface InvestmentProps{}
     constructor(props:InvestmentProps) {
         super(props);
         this.state = {
-Username: '',
-Amount : 0,
-Duration: 0,
+username: '',
+amount : 0,
+duration: 0,
             returns:0
         }
     }
@@ -27,10 +27,10 @@ submitHandler = (event:any)=>{
 
 
    console.log(this.state)
-   axios.post<InvestmentState['returns']>('https://127.0.0.1:5001/api/Investment',this.state).then((response:AxiosResponse<InvestmentState["returns"]>) => {
+   axios.post<InvestmentState>('http://127.0.0.1:8000/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
 
        this.setState({
-           returns:response.data
+           returns:data.returns
        })
    }, (error) => {
        console.log(error);
@@ -38,7 +38,7 @@ submitHandler = (event:any)=>{
 }
 render():JSX.Element{
 
-    const { Username, Amount,Duration } = this.state
+    const { username, amount,duration } = this.state
         return(
             <div className={'container'} >
                 <div className='row'>
@@ -47,24 +47,24 @@ render():JSX.Element{
 
                             <div className="form-group">
                                 <label htmlFor='username'>Username</label>
-                                <input type="text" className="form-control"  name='Username'
+                                <input type="text" className="form-control"  name="username"
                                        id='username' placeholder="Enter your username" onChange={this.changeHandler}
-                                value={Username}/>
+                                value={username}/>
 
                             </div>
                             <div className="form-group">
                                 <label htmlFor="amount">Amount</label>
-                                <input type="number" className="form-control" name='Amount'
+                                <input type="number" className="form-control" name="amount"
                                        id='amount'  placeholder="Enter amount you want to invest"
                                        onChange={this.changeHandler}
-                                value={Amount}/>
+                                value={amount}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="amount">Duration</label>
-                                <input type="number" className="form-control" name='Duration'
+                                <input type="number" className="form-control" name="duration"
                                        id='duration'  placeholder="Duration in years."
                                        onChange={this.changeHandler}
-                                value={Duration}/>
+                                value={duration}/>
                             </div>
 
                             <button type="submit" className="btn btn-primary">Invest</button>
