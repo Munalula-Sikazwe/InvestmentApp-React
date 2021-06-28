@@ -5,18 +5,19 @@ interface InvestmentState {
     username: string;
     amount: number;
     duration:number;
-    returns:number;
+    investmentReturns:number;
 }
 interface InvestmentProps{}
  export class MakeInvestmentComponent extends Component<InvestmentProps,InvestmentState>{
     state:InvestmentState;
     constructor(props:InvestmentProps) {
         super(props);
+
         this.state = {
 username: '',
 amount : 0,
 duration: 0,
-            returns:0
+            investmentReturns:0
         }
     }
 changeHandler= (event:any)=>{
@@ -30,7 +31,7 @@ submitHandler = (event:any)=>{
    axios.post<InvestmentState>('http://127.0.0.1:8000/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
 
        this.setState({
-           returns:data.returns
+           investmentReturns:data.investmentReturns
        })
    }, (error) => {
        console.log(error);
@@ -73,7 +74,7 @@ render():JSX.Element{
 
                 </div>
                 <hr/>
-<p> Interest : {this.state.returns}</p>
+<p> Interest : {this.state.investmentReturns}</p>
             </div>
         )
 }
