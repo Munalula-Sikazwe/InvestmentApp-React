@@ -34,10 +34,9 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         })
     }
     clickHandler = (investmentId:number)=> {
-        axios.delete<Investmentstate['investment']>(`https://localhost:5001/api/Investment/${investmentId}`).then((response:AxiosResponse<Investmentstate["investment"]>)=>{
-            this.setState({investment:response.data})
+        axios.delete<Investmentstate['investment']>(`http://localhost:8000/api/Investments/Delete/${investmentId}`).then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
+            this.setState({investment:data})
         })
-
     }
     render():JSX.Element {
     return (
