@@ -26,10 +26,9 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         }
     }
     componentDidMount() {
-        axios.get<Investmentstate["investment"]>('http://127.0.0.1:8000/api/Investments').then((response:AxiosResponse<Investmentstate["investment"]>)=>{
-            console.log(response.data);
+        axios.get<Investmentstate["investment"]>('http://127.0.0.1:8000/api/Investments').then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
             this.setState({
-                investment:response.data
+                investment:data
             })
         })
     }
