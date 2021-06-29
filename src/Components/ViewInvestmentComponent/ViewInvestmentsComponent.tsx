@@ -34,6 +34,7 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
     }
     clickHandler = (investmentId:number)=> {
         axios.delete<Investmentstate['investment']>(`http://localhost:8000/api/Investments/Delete/${investmentId}`).then(()=>{
+            alert(`The Investment of id:${investmentId} was deleted successfully`)
             axios.get<Investmentstate["investment"]>('http://127.0.0.1:8000/api/Investments').then((response:AxiosResponse<Investmentstate["investment"]>)=>{
                 console.log(response.data);
                 this.setState({
