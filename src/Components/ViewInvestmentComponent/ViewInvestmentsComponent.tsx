@@ -26,16 +26,16 @@ export class ViewInvestmentsComponent extends Component<Investmentprops, Investm
         }
     }
     componentDidMount() {
-        axios.get<Investmentstate["investment"]>('http://127.0.0.1:8000/api/Investments').then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
+        axios.get<Investmentstate["investment"]>('https://investmentapp-backend.herokuapp.com/api/Investments').then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
             this.setState({
                 investment:data
             })
         })
     }
     clickHandler = (investmentId:number)=> {
-        axios.delete<Investmentstate['investment']>(`http://localhost:8000/api/Investments/Delete/${investmentId}`).then(()=>{
+        axios.delete<Investmentstate['investment']>(`https://investmentapp-backend.herokuapp.com/api/Investments/Delete/${investmentId}`).then(()=>{
             alert(`The Investment of id:${investmentId} was deleted successfully`)
-            axios.get<Investmentstate["investment"]>('http://127.0.0.1:8000/api/Investments').then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
+            axios.get<Investmentstate["investment"]>('https://investmentapp-backend.herokuapp.com/api/Investments').then(({data}:AxiosResponse<Investmentstate["investment"]>)=>{
                 this.setState({
                     investment:data
                 })

@@ -28,7 +28,7 @@ submitHandler = (event:any)=>{
 
 
    console.log(this.state)
-   axios.post<InvestmentState>('http://127.0.0.1:8000/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
+   axios.post<InvestmentState>('https://investmentapp-backend.herokuapp.com/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
 
        this.setState({
            investmentReturns:data.investmentReturns
