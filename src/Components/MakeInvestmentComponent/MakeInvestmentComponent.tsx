@@ -28,7 +28,7 @@ submitHandler = (event:any)=>{
 
 
    console.log(this.state)
-   axios.post<InvestmentState>('https://localhost:8000/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
+   axios.post<InvestmentState>('http://localhost:8000/api/Investments',this.state).then(({data}:AxiosResponse<InvestmentState>) => {
 
        this.setState({
            investmentReturns:data.investmentReturns
